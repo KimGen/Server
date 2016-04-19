@@ -8,3 +8,5 @@ mkdir /srv/KimGenLab
 mkdir /srv/KimGenLab/PlatformDb
 mkdir /srv/KimGenLab/PlatformDb/data
 mkdir /srv/KimGenLab/PlatformDb/conf
+mkdir /srv/KimGenLab/Apache
+mkdir /srv/KimGenLab/Platform
