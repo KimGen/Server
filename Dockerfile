@@ -1,4 +1,4 @@
-FROM php:5.6-apache
+FROM ubuntu:16.04
 
 RUN a2enmod rewrite
 
