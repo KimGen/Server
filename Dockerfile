@@ -2,8 +2,8 @@ FROM ubuntu:16.04
 
 RUN a2enmod rewrite
 
-RUN apt-get update && apt-get install --no-install-recommends -y \
-		libpng12-dev libjpeg-dev php5-curl php5-gd openssl \
+RUN apt-get update && apt-get upgrade && apt-get install --no-install-recommends -y \
+		wget \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
