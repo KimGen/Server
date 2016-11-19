@@ -4,17 +4,19 @@ RUN apt-get update && apt-get install -y wget apt-utils && apt-get upgrade -y &&
 
 #install webserver base
 RUN apt-get install -y apache2
-RUN apache2 -k restart
-RUN apt-get install -y curl
-RUN apt-get install -y mysql-server
-RUN sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-gd
+RUN systemctl enable apache2
+RUN systemctl start apache2
+#RUN apache2 -k restart
+#RUN apt-get install -y curl
+#RUN apt-get install -y mysql-server
+#RUN sudo apt-get install -y php libapache2-mod-php php-mcrypt php-mysql php-gd
 
 # install git and curl
-RUN apt-get install -y git curl php-curl openssl
+#RUN apt-get install -y git curl php-curl openssl
 
-RUN wget --no-check-certificate https://raw.githubusercontent.com/KimGen/platform/master/_one-click-installation/bootstrap.sh \
+#RUN wget --no-check-certificate https://raw.githubusercontent.com/KimGen/platform/master/_one-click-installation/bootstrap.sh \
     && chmod +x bootstrap.sh && ./bootstrap.sh
 
-RUN apache2 -k restart
+#RUN apache2 -k restart
 	
-RUN rm -rf /var/lib/apt/lists/*
+#RUN rm -rf /var/lib/apt/lists/*
